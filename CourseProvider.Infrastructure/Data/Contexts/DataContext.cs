@@ -20,7 +20,6 @@ namespace CourseProvider.Infrastructure.Data.Contexts
             modelBuilder.Entity<CourseEntity>().ToContainer("Courses");
             modelBuilder.Entity<CourseEntity>().HasPartitionKey(c => c.Id);
             modelBuilder.Entity<CourseEntity>().OwnsOne(c => c.Prices);
-            modelBuilder.Entity<CourseEntity>().OwnsOne(c => c.Content, content => content.OwnsMany(c => c.ProgramDetails));
             modelBuilder.Entity<CourseEntity>().OwnsMany(c => c.Authors);
         }
     }

@@ -18,4 +18,16 @@ public class Query(ICourseService courseService)
     {
         return await _courseService.GetCoursesAsync();
     }
+
+    [GraphQLName("updateCourse")]
+    public async Task<Course> UpdateCourseAsync(CourseUpdateRequest course)
+    {
+        return await _courseService.UpdateCourseAsync(course);
+    }
+
+    [GraphQLName("deleteCourse")]
+    public async Task<bool> RemoveCourseAsync(string id)
+    {
+        return await _courseService.RemoveCourseAsync(id);
+    }
 }

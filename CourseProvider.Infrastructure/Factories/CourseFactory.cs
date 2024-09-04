@@ -11,15 +11,9 @@ public static class CourseFactory
     {
         return new CourseEntity
         {
-            ImageUri = request.ImageUri,
-            ImageHeaderUri = request.ImageHeaderUri,
+            Image = request.Image,
             IsBestseller = request.IsBestseller,
-            IsDigital = request.IsDigital,
-            Categories = request.Categories,
             Title = request.Title,
-            Ingress = request.Ingress,
-            Rating = request.Rating,
-            Reviews = request.Reviews,
             LikesPercent = request.LikesPercent,
             Likes = request.Likes,
             Hours = request.Hours,
@@ -31,17 +25,6 @@ public static class CourseFactory
             {
                 Price = request.Prices.Price,
                 Discount = request.Prices.Discount
-            },
-            Content = request.Content == null ? null : new ContentEntity
-            {
-                Description = request.Content.Description,
-                Includes = request.Content.Includes,
-                ProgramDetails = request.Content.ProgramDetails?.Select(p => new ProgramDetailsEntity
-                {
-                    Id = p.Id,
-                    Title = p.Title,
-                    Description = p.Description
-                }).ToList()
             }
         };
     }
@@ -51,15 +34,9 @@ public static class CourseFactory
         return new CourseEntity
         {
             Id = request.Id,
-            ImageUri = request.ImageUri,
-            ImageHeaderUri = request.ImageHeaderUri,
+            Image = request.Image,
             IsBestseller = request.IsBestseller,
-            IsDigital = request.IsDigital,
-            Categories = request.Categories,
             Title = request.Title,
-            Ingress = request.Ingress,
-            Rating = request.Rating,
-            Reviews = request.Reviews,
             LikesPercent = request.LikesPercent,
             Likes = request.Likes,
             Hours = request.Hours,
@@ -71,17 +48,6 @@ public static class CourseFactory
             {
                 Price = request.Prices.Price,
                 Discount = request.Prices.Discount
-            },
-            Content = request.Content == null ? null : new ContentEntity
-            {
-                Description = request.Content.Description,
-                Includes = request.Content.Includes,
-                ProgramDetails = request.Content.ProgramDetails?.Select(p => new ProgramDetailsEntity
-                {
-                    Id = p.Id,
-                    Title = p.Title,
-                    Description = p.Description
-                }).ToList()
             }
         };
     }
@@ -91,15 +57,9 @@ public static class CourseFactory
         return new Course
         {
             Id = entity.Id,
-            ImageUri = entity.ImageUri,
-            ImageHeaderUri = entity.ImageHeaderUri,
+            Image = entity.Image,
             IsBestseller = entity.IsBestseller,
-            IsDigital = entity.IsDigital,
-            Categories = entity.Categories,
             Title = entity.Title,
-            Ingress = entity.Ingress,
-            Rating = entity.Rating,
-            Reviews = entity.Reviews,
             LikesPercent = entity.LikesPercent,
             Likes = entity.Likes,
             Hours = entity.Hours,
@@ -111,17 +71,6 @@ public static class CourseFactory
             {
                 Price = entity.Prices.Price,
                 Discount = entity.Prices.Discount
-            },
-            Content = entity.Content == null ? null : new Content
-            {
-                Description = entity.Content.Description,
-                Includes = entity.Content.Includes,
-                ProgramDetails = entity.Content.ProgramDetails?.Select(p => new ProgramDetailsItem
-                {
-                    Id = p.Id,
-                    Title = p.Title,
-                    Description = p.Description
-                }).ToList()
             }
         };
     }
